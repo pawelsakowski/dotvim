@@ -1,0 +1,89 @@
+" VUNDLE
+
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install bundles
+" "let path = '~/some/path/here'
+" "call vundle#rc(path)
+"
+" " let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+Bundle 'klen/python-mode'
+
+filetype plugin indent on     " required
+" To ignore plugin indent changes, instead use:
+" "filetype plugin on
+" "
+" " Brief help
+" " :BundleList          - list configured bundles
+" " :BundleInstall(!)    - install (update) bundles
+" " :BundleSearch(!) foo - search (or refresh cache first) for foo
+" " :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+" "
+" " see :h vundle for more details or wiki for FAQ
+" " NOTE: comments after Bundle commands are not allowed.
+" " Put your stuff after this line
+
+"end of VUNDLE
+
+
+
+
+call pathogen#infect()
+call pathogen#helptags()
+autocmd! bufwritepost .vimrc source %
+
+set nocompatible
+scriptencoding utf-8
+
+set pastetoggle=<F2> 	"F2 wkleja tekst w trybie insert
+set clipboard=unnamed
+
+set bs=2
+set mouse=a   "aktywacja obslugi myszki
+
+
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertLeave * match ExtraWhitespace /\s\+$/
+
+filetype off
+filetype plugin indent on
+syntax on
+set autoindent
+
+set number
+set tw=65
+set formatoptions+=t
+set nowrap
+set fo-=t
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
+
+set ruler
+
+set history=700
+set undolevels=700
+
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+set t_Co=256
+color jellybeans
+
+let mapleader = ","
+let g:pymode_rope_completion = 0
